@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Suman Website Test</title>
+        <link rel="stylesheet" href="services.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Suman.</a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#" class ="active">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <input type="file" name="file" onchange="selectedVideo(this);"/>
+
+    <video autoplay id="video" controls>
+        <source id="source" type="video/mp4">
+    </video>
+
+    <script>
+        function selectedVideo(self){
+            var file = self.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                var src = e.target.result;
+                var video = document.getElementById("video");
+                var source = document.getElementById("source");
+
+                source.setAttribute("src", src);
+                video.load();
+                video.play();
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+    
+        <section class="home">
+            <div class="home-sci">
+            </div>
+        </section>
+    
+</body>
+</html>
